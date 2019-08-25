@@ -1,0 +1,54 @@
+{
+    "name": "dmackgl/rcicl",
+    "description": "Verificación RUT y N° de serie [Servicio de registro Civil e Identidad]",
+    "keywords": [
+        "dmackgl",
+        "rcicl"
+    ],
+    "homepage": "https://github.com/dmackgl/rcicl",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Franco Sanllehi",
+            "email": "fsanllehi@gamerlive.cl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DmACKGL\\RCICL\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DmACKGL\\RCICL\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DmACKGL\\RCICL\\RCICLServiceProvider"
+            ],
+            "aliases": {
+                "RCICL": "DmACKGL\\RCICL\\RCICLFacade"
+            }
+        }
+    }
+}
